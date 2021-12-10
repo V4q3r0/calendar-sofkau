@@ -1,7 +1,10 @@
 package co.com.sofka.calendar.collections;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
+@Document
 public class CourseTime {
 
     private String courseId;

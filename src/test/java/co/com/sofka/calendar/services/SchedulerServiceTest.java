@@ -46,35 +46,35 @@ class SchedulerServiceTest {
         Flux<ProgramDate> response = schedulerService.generateCalendar(programId, startDate);
 
         StepVerifier.create(response)
-                .expectNextMatches(programDate -> {
-                     return programDate.getDate().toString().equals("2022-01-03")
-                              && programDate.getCategoryName().equals("Principios");
-                  })
-                .expectNextMatches(programDate -> {
-                    return programDate.getDate().toString().equals("2022-01-04")
-                            && programDate.getCategoryName().equals("Bases");
-                })
-                .expectNextMatches(programDate -> {
-                    return programDate.getDate().toString().equals("2022-01-05")
-                            && programDate.getCategoryName().equals("Bases");
-                })
-                .expectNextMatches(programDate -> {
-                    return programDate.getDate().toString().equals("2022-01-06")
-                            && programDate.getCategoryName().equals("Fundamentos");
-                })
-                .expectNextMatches(programDate -> {
-                    return programDate.getDate().toString().equals("2022-01-07")
-                            && programDate.getCategoryName().equals("Fundamentos");
-                })
-                .expectNextMatches(programDate -> {
-                    return programDate.getDate().toString().equals("2022-01-10")
-                            && programDate.getCategoryName().equals("Fundamentos");
-                })
+                .expectNextMatches(programDate ->
+                    programDate.getDate().toString().equals("2022-01-03")
+                              && programDate.getCategoryName().equals("Principios")
+                )
+                .expectNextMatches(programDate ->
+                     programDate.getDate().toString().equals("2022-01-04")
+                            && programDate.getCategoryName().equals("Bases")
+                )
+                .expectNextMatches(programDate ->
+                        programDate.getDate().toString().equals("2022-01-05")
+                            && programDate.getCategoryName().equals("Bases")
+                )
+                .expectNextMatches(programDate ->
+                     programDate.getDate().toString().equals("2022-01-06")
+                            && programDate.getCategoryName().equals("Fundamentos")
+                )
+                .expectNextMatches(programDate ->
+                     programDate.getDate().toString().equals("2022-01-07")
+                            && programDate.getCategoryName().equals("Fundamentos")
+                )
+                .expectNextMatches(programDate ->
+                     programDate.getDate().toString().equals("2022-01-10")
+                            && programDate.getCategoryName().equals("Fundamentos")
+                )
                 .verifyComplete();
 
         StepVerifier.create(response)
                 .expectNextCount(6)
-                        .verifyComplete();
+                .verifyComplete();
 
         //Assertions.assertEquals(13, response.size());//TODO: hacer de otro modo
         //Assertions.assertEquals(getSnapResult(), new Gson().toJson(response));//TODO: hacer de otro modo
@@ -122,9 +122,9 @@ class SchedulerServiceTest {
     }
 
     //no tocar
-    private String getSnapResult() {
+    /*private String getSnapResult() {
         return "[{\"categoryName\":\"Principios\",\"date\":{\"year\":2022,\"month\":1,\"day\":3}},{\"categoryName\":\"Principios\",\"date\":{\"year\":2022,\"month\":1,\"day\":4}},{\"categoryName\":\"Bases\",\"date\":{\"year\":2022,\"month\":1,\"day\":5}},{\"categoryName\":\"Bases\",\"date\":{\"year\":2022,\"month\":1,\"day\":6}},{\"categoryName\":\"Fundamentos\",\"date\":{\"year\":2022,\"month\":1,\"day\":7}},{\"categoryName\":\"Fundamentos\",\"date\":{\"year\":2022,\"month\":1,\"day\":10}},{\"categoryName\":\"Fundamentos\",\"date\":{\"year\":2022,\"month\":1,\"day\":11}},{\"categoryName\":\"Fundamentos\",\"date\":{\"year\":2022,\"month\":1,\"day\":12}},{\"categoryName\":\"Fundamentos avazandos\",\"date\":{\"year\":2022,\"month\":1,\"day\":13}},{\"categoryName\":\"Fundamentos avazandos\",\"date\":{\"year\":2022,\"month\":1,\"day\":14}},{\"categoryName\":\"Fundamentos avazandos\",\"date\":{\"year\":2022,\"month\":1,\"day\":17}},{\"categoryName\":\"Fundamentos avazandos\",\"date\":{\"year\":2022,\"month\":1,\"day\":18}},{\"categoryName\":\"Fundamentos avazandos\",\"date\":{\"year\":2022,\"month\":1,\"day\":19}}]";
-    }
+    }*/
 
 
 }
